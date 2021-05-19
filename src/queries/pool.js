@@ -5,13 +5,7 @@ console.log(process.env.DATABASE_URL);
 //const db =
 //  process.env.NODE_ENV === "test" ? "movieplaza_test" : "da03vvrv0hhp7l";
 const pool = new Pool({
-  //connectionString: process.env.DATABASE_URL,
-  user: env.username,
-  host: env.host,
-  database: env.database,
-  password: env.password,
-  port: env.port,
-  //ssl: true,
+  connectionString: process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false },
 });
 const pgPoolWrapper = {
