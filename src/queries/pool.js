@@ -5,10 +5,12 @@ console.log(process.env.DATABASE_URL);
 //const db =
 //  process.env.NODE_ENV === "test" ? "movieplaza_test" : "da03vvrv0hhp7l";
 const pool = new Pool({
-  host: "ec2-54-216-185-51.eu-west-1.compute.amazonaws.com",
-  database: "da03vvrv0hhp7l",
-  user: "lmiadzbwcpstsz",
-  password: "f39cae1f7f55cd3cb16010e924eab745533c1eb9568e04f35ee92ea21ae0afa8",
+  connectionString:
+    "postgres://lmiadzbwcpstsz:f39cae1f7f55cd3cb16010e924eab745533c1eb9568e04f35ee92ea21ae0afa8@ec2-54-216-185-51.eu-west-1.compute.amazonaws.com/da03vvrv0hhp7l",
+  //host: "ec2-54-216-185-51.eu-west-1.compute.amazonaws.com",
+  //database: "da03vvrv0hhp7l",
+  //user: "lmiadzbwcpstsz",
+  //password: "f39cae1f7f55cd3cb16010e924eab745533c1eb9568e04f35ee92ea21ae0afa8",
   ssl: { rejectUnauthorized: false },
 });
 const pgPoolWrapper = {
