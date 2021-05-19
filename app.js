@@ -9,7 +9,7 @@ app.register(require("fastify-socket.io"), {
 });
 
 const pgSession = require("connect-pg-simple")(fastifySession);
-
+/*
 app.register(fastifySession, {
   store: new pgSession({
     conString: process.env.DATABASE_URL,
@@ -20,21 +20,20 @@ app.register(fastifySession, {
   cookie: { secure: false, path: "/", maxAge: 7 * 24 * 60 * 60 * 1000 }, //срок дії cookie 7 днів, протокол http(secure: false)
 });
 
-/*
-app.register(require('fastify-cors'), {
-    origin: 'http://localhost:3000',
+app.register(require("fastify-cors"), {
+  origin: "*",
 
-    credentials: 'same-origin',
-    allowMethods:
-        'PROPFIND, PROPPATCH, COPY, MOVE, DELETE, MKCOL, LOCK, UNLOCK, PUT, GETLIB, VERSION-CONTROL, CHECKIN, CHECKOUT, UNCHECKOUT, REPORT, UPDATE, CANCELUPLOAD, HEAD, OPTIONS, GET, POST',
-    allowedHeaders: [
-        'Content-Type',
-        'Authorization',
-        'Cache-Control',
-        'X-Custom-Header',
-        'X-Requested-With',
-        'Cookie',
-    ],
+  credentials: "same-origin",
+  allowMethods:
+    "PROPFIND, PROPPATCH, COPY, MOVE, DELETE, MKCOL, LOCK, UNLOCK, PUT, GETLIB, VERSION-CONTROL, CHECKIN, CHECKOUT, UNCHECKOUT, REPORT, UPDATE, CANCELUPLOAD, HEAD, OPTIONS, GET, POST",
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Cache-Control",
+    "X-Custom-Header",
+    "X-Requested-With",
+    "Cookie",
+  ],
 });
 */
 app.register(require("./src/routes/index"));
