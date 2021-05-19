@@ -18,6 +18,8 @@ pool.connect((err) => {
   if (err) {
     console.log(err);
     return console.error("Error acquiring pool", err.stack);
+  } else {
+    console.log("thats fine");
   }
 });
 
