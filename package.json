@@ -13,6 +13,9 @@
         "format": "prettier --write app.js package.json .eslintrc.json src/",
         "check-format": "prettier --check app.js package.json .eslintrc.json src/"
     },
+    "engines": {
+        "node": "10.x"
+    },
     "author": "",
     "license": "ISC",
     "jest": {
