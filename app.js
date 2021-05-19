@@ -12,7 +12,7 @@ const pgSession = require("connect-pg-simple")(fastifySession);
 
 app.register(fastifySession, {
   store: new pgSession({
-    conString: "postgres://movieadmin1:movieadmin@localhost:5432/movieplaza",
+    conString: process.env.DATABASE_URL,
     tableName: "session",
   }),
   cookieName: "sessionId",
