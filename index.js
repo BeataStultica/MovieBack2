@@ -1,8 +1,5 @@
 const app = require("./app");
 
-app.listen(process.env.PORT || 3001, "0.0.0.0", (err) => {
-  if (err) {
-    app.log.error(err);
-    process.exit(1);
-  }
+app.listen(process.env.PORT || 5000, (err) => {
+  console.log("Listening on " + port);
 });
