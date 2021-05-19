@@ -9,10 +9,11 @@ app.register(require("fastify-socket.io"), {
 });
 
 const pgSession = require("connect-pg-simple")(fastifySession);
-/*
+
 app.register(fastifySession, {
   store: new pgSession({
     conString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false },
     tableName: "session",
   }),
   cookieName: "sessionId",
@@ -35,7 +36,7 @@ app.register(require("fastify-cors"), {
     "Cookie",
   ],
 });
-*/
+
 app.register(require("./src/routes/index"));
 app.register(require("./src/routes/login"));
 app.register(require("./src/routes/filmImg"));
