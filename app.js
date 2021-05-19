@@ -12,9 +12,11 @@ const pgSession = require("connect-pg-simple")(fastifySession);
 
 app.register(fastifySession, {
   store: new pgSession({
-    conString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false },
-    tableName: "session",
+    conObject: {
+      connectionString: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
+      tableName: "session",
+    },
   }),
   cookieName: "sessionId",
   secret: "1qwqwqwwhjehu2372e8ywhdhu92e8uids",
