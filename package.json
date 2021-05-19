@@ -1,0 +1,47 @@
+{
+    "name": "back",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest --forceExit --coverage --detectOpenHandles",
+        "integration-test": "jest --forceExit --coverage --detectOpenHandles routes.test.js",
+        "unit-test": "jest --forceExit --coverage --detectOpenHandles quer users.test.js",
+        "start": "node index.js",
+        "lint": "eslint app.js src/",
+        "lint:fix": "eslint --fix app.js src/",
+        "format": "prettier --write app.js package.json .eslintrc.json src/",
+        "check-format": "prettier --check app.js package.json .eslintrc.json src/"
+    },
+    "author": "",
+    "license": "ISC",
+    "jest": {
+        "testEnvironment": "node",
+        "coveragePathIgnorePatterns": [
+            "/node_modules/"
+        ]
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "connect-pg-simple": "^6.2.1",
+        "dotenv": "^9.0.2",
+        "eslint": "^7.21.0",
+        "eslint-config-prettier": "^8.1.0",
+        "fastify": "^3.14.2",
+        "fastify-cookie": "^5.3.0",
+        "fastify-cors": "^5.2.0",
+        "fastify-socket.io": "^2.0.0",
+        "fastify-session": "^5.2.1",
+        "http-status": "^1.5.0",
+        "nodemon": "^2.0.7",
+        "pg": "^8.6.0",
+        "prettier": "^2.2.1"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "fastify-socket.io": "^1.0.2",
+        "jest": "^26.6.3",
+        "supertest": "^6.1.3",
+        "uuid": "^8.3.2"
+    }
+}

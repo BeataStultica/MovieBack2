@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "movie-plaza-1back",
+    "builds": [
+      { "src": "*.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/.*", "dest": "https://movie-plaza-1back.vercel.app" }
+    ]
+  }
